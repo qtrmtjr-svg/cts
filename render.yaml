@@ -9,8 +9,12 @@ services:
       - key: NODE_ENV
         value: production
       - key: DATABASE_URL
-        value: file:/var/data/stc.db
-    disk:
-      name: stc-sqlite
-      mountPath: /var/data
-      sizeGB: 1
+        value: file:./prisma/stc.db
+      - key: AUTH_SECRET
+        value: barq-cts-secret-2024-render
+      - key: PAYMENT_MODE
+        value: mock
+      - key: AIRTIME_MODE
+        value: mock
+      - key: APP_URL
+        value: https://cts-3z6m.onrender.com
