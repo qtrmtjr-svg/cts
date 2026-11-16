@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsx server.ts",
     "dev:next": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "build:render": "prisma generate && next build",
     "start": "node scripts/render-prepare-db.mjs && next start",
     "start:next": "next start",
