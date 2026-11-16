@@ -1,0 +1,16 @@
+# Optional Render Blueprint — or copy these settings manually in the dashboard.
+services:
+  - type: web
+    name: stc-web
+    runtime: node
+    buildCommand: npm install && npm run build:render
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: file:/var/data/stc.db
+    disk:
+      name: stc-sqlite
+      mountPath: /var/data
+      sizeGB: 1
